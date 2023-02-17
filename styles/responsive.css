@@ -2,29 +2,41 @@
     RESPONSIVE DESIGN::
 */
 
+/* 
+    FOR LANDSCAPE AND LARGE MOBILE DEVICES AND TABLET;
+*/
 @media screen and (min-width:577px) and (max-width:992px) {
-    .navbar{
-        margin: 0px;    
-   }
-   .section-1{
-    gap: 0px;
-   }
-   .section1-left{
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-   }
+    .navbar {
+        margin: 0px;
+    }
+
+    .section-1 {
+        flex-direction: column-reverse;
+        gap: 5px;
+    }
+
+    .section1-left {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }
+
+/* 
+    FOR POTRAIT AND SMALL MOBILE DEVICES;
+*/
 
 @media screen and (max-width:576px) {
-    .navbar{
-        margin: 0px;    
-   }
-   .section-1{
-    gap: 0px;
-   }
-   .section1-left{
-    grid-template-columns: repeat(1,1fr);
-    gap: 10px;
-   }
-}
+    .navbar {
+        margin: 0px;
+    }
 
+    .section-1 {
+        gap: 5px;
+        flex-direction: column-reverse;
+    }
+
+    .section1-left {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
