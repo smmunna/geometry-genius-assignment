@@ -6,6 +6,13 @@
     .navbar{
         margin: 0px;    
    }
+   .section-1{
+    gap: 0px;
+   }
+   .section1-left{
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+   }
 }
 
 @media screen and (max-width:576px) {
