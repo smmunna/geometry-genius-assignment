@@ -1,59 +1,68 @@
 /* External FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
-body{
+body {
     font-family: 'Ubuntu', sans-serif;
 }
+
 /* Navbar */
-.navbar{
-     margin: 15px;
-     background: #1090D81A;
+.navbar {
+    margin: 15px;
+    background: #1090D81A;
 }
 
 /* SECTION 01 */
-.section-1{
+.section-1 {
     margin: 15px;
 }
-.section1-card1{
+
+.section1-card1 {
     text-align: center;
     padding: 40px 20px;
     border: 1px solid rgba(0, 0, 0, 0.128);
 }
-.section1-card1:hover{
+
+.section1-card1:hover {
     background-color: #FBBCED;
 }
-.section1-card1-heading{
+
+.section1-card1-heading {
     font-weight: bolder;
     margin-top: 3%;
 }
-.section1-card1-formula{
+
+.section1-card1-formula {
     margin-bottom: 3%;
 }
 
-.section1-card1-inputbox{
+.section1-card1-inputbox {
     margin-bottom: 4%;
 }
-.section1-card1-inputbox input{
+
+.section1-card1-inputbox input {
     outline: transparent;
     border: hidden;
     border: 1px solid rgba(0, 0, 0, 0.11);
     padding: 10px;
     width: 20%;
 }
-.btn-primary{
+
+.btn-primary {
     background-color: #1090D8;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: #1090D8;
 }
 
 /* Flex */
-.section-1{
+.section-1 {
     display: flex;
     gap: 20px;
 }
-.section1-left{
+
+.section1-left {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
