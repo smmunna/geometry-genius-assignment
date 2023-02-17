@@ -22,9 +22,25 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.128);
 }
 
-.section1-card1:hover {
+.triangle:hover {
     background-color: #FBBCED;
 }
+.parallelogram:hover{
+    background-color: #CCCCFF;
+}
+.rectangle:hover{
+    background-color: #B2F069;
+}
+.rhombus:hover{
+    background-color: #69C7F0;
+}
+.pentagon:hover{
+    background-color: #B5A908;
+}
+.ellipse:hover{
+    background-color: #FFC1AC;
+}
+
 
 .section1-card1-heading {
     font-weight: bolder;
