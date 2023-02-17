@@ -1,3 +1,16 @@
 /* 
     RESPONSIVE DESIGN::
 */
+
+@media screen and (min-width:577px) and (max-width:992px) {
+    .navbar{
+        margin: 0px;    
+   }
+}
+
+@media screen and (max-width:576px) {
+    .navbar{
+        margin: 0px;    
+   }
+}
+

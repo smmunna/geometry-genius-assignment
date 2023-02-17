@@ -1,0 +1,11 @@
+/* External FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+/* Navbar */
+.navbar{
+     margin: 15px;
+     background: #1090D81A;
+}
