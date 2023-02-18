@@ -1,5 +1,6 @@
 /* External FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu&display=swap');
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -24,19 +25,24 @@ body {
 .triangle:hover {
     background-color: #FBBCED;
 }
-.parallelogram:hover{
+
+.parallelogram:hover {
     background-color: #CCCCFF;
 }
-.rectangle:hover{
+
+.rectangle:hover {
     background-color: #B2F069;
 }
-.rhombus:hover{
+
+.rhombus:hover {
     background-color: #69C7F0;
 }
-.pentagon:hover{
+
+.pentagon:hover {
     background-color: #B5A908;
 }
-.ellipse:hover{
+
+.ellipse:hover {
     background-color: #FFC1AC;
 }
 
@@ -85,14 +91,15 @@ body {
 
 
 /* COMPLETED  */
-.mylist-items{
+.mylist-items {
     margin: 10px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
-ol{
+
+ol {
     display: none;
 }
