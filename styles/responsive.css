@@ -43,4 +43,7 @@
     .mylist-items{
         grid-template-columns: repeat(2,1fr);
     }
+    .footer{
+        padding: 20px 30px;
+    }
 }
