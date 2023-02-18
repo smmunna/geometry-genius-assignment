@@ -117,14 +117,12 @@ document.getElementById('para-calculate').addEventListener('click', function () 
 
 // MADE FUNCTION FOR TRIANGLE, RHOMBOS, PENTAGOAN::
 function AreaOfTriRhoPen(inputs1,inputs2,base1,height1,heading1){
-    const triangleInputFieldFloat1 = parseFloat(inputs1);
-    const triangleInputFieldFloat2 = parseFloat(inputs2);
+    const triangleInputFieldFloat1 = parseFloat(inputs1); //CHANGE
+    const triangleInputFieldFloat2 = parseFloat(inputs2); //CHANGE
 
     // CALCULATION PART::
 
     const triangleAreaResult = 0.5 * triangleInputFieldFloat1 * triangleInputFieldFloat2;
-
-   
 
     const tribase = document.getElementById(base1); //CHANGE
     tribase.innerText = triangleInputFieldFloat1;
@@ -170,7 +168,6 @@ document.getElementById('triangle-calculate').addEventListener('click', function
     // SECOND INPUT FIELD::
     const triangleInputField2 = document.getElementById('tri-input2');
     const triangleInputFieldValue2 = triangleInputField2.value;
-    
 
     // Validation;
     if (isNaN(triangleInputFieldValue1)) {
@@ -204,17 +201,24 @@ document.getElementById('triangle-calculate').addEventListener('click', function
 
 // WORKING WITH PENTAGON
 // FINDING THE pentagon AREA::
+document.getElementById('calculate-pentagon').addEventListener('click', function () {
+// First Pentagon InputBox
+const triangleInputField1 = document.getElementById('penta-value1');
+const triangleInputFieldValue1 = triangleInputField1.innerText;
+const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
 
-function findingArea(pentaValue1, pentaValue2) {
-
-
-    // Validation;
-    if (isNaN(PentagonInputFieldFloat1)) {
+// SECOND Pentagon INPUT FIELD::
+const triangleInputField2 = document.getElementById('penta-value2');
+const triangleInputFieldValue2 = triangleInputField2.innerText;
+const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
+  
+// Validation;
+    if (isNaN(triangleInputFieldValue1)) {
         alert('Please Enter valid Input...!');
         const olList = document.getElementById('ol-list');
         olList.style.display = 'none';
     }
-    else if (isNaN(PentagonInputFieldFloat2)) {
+    else if (isNaN(triangleInputFieldValue2)) {
         alert('Please Enter valid Input...!');
         const olList = document.getElementById('ol-list');
         olList.style.display = 'none';
@@ -224,22 +228,22 @@ function findingArea(pentaValue1, pentaValue2) {
 
         // CALCULATION PART::
 
-        const triangleAreaResult = 0.5 * pentaValue1 * pentaValue2;
+        const triangleAreaResult = 0.5 * triangleInputFieldFloat1 * triangleInputFieldFloat2;
 
-        const tribase = document.getElementById('penta-base');
-        tribase.innerText = PentagonInputFieldFloat1;
+        const tribase = document.getElementById('penta-base'); //CHANGE
+        tribase.innerText = triangleInputFieldFloat1;
 
-        const triheight = document.getElementById('penta-height');
-        triheight.innerText = PentagonInputFieldFloat2;
+        const triheight = document.getElementById('penta-height'); //CHANGE
+        triheight.innerText = triangleInputFieldFloat2;
 
         //   Fetch Name From UI;
-        const triHeading = document.getElementById('penta-heading');
-        const PentaHeadingText = triHeading.innerText;
+        const triHeading = document.getElementById('penta-heading'); //CHANGE
+        const triHeadingText = triHeading.innerText;
         //   RESULT SHOWING PART;
         const name = document.getElementById('name');
         const result = document.getElementById('result');
 
-        name.innerText = PentaHeadingText;
+        name.innerText = triHeadingText;
         result.innerText = triangleAreaResult.toFixed(2);
 
         // SHOWING THE RESULT IN A BLOCK::
@@ -260,20 +264,6 @@ function findingArea(pentaValue1, pentaValue2) {
         })
 
     }
-}
-// First Pentagon InputBox
-const PentagonInputField1 = document.getElementById('penta-value1');
-const PentagonInputFieldValue1 = PentagonInputField1.innerText;
-const PentagonInputFieldFloat1 = parseFloat(PentagonInputFieldValue1);
-
-// SECOND Pentagon INPUT FIELD::
-const PentagonInputField2 = document.getElementById('penta-value2');
-const PentagonInputFieldValue2 = PentagonInputField2.innerText;
-const PentagonInputFieldFloat2 = parseFloat(PentagonInputFieldValue2);
-
-document.getElementById('calculate-pentagon').addEventListener('click', function () {
-    // PASSING THE VALUES TO THE FUNCTION;
-    const findAreaofPentagon = findingArea(PentagonInputFieldFloat1, PentagonInputFieldFloat2);
 })
 
 // Working with RHOMBOS::
