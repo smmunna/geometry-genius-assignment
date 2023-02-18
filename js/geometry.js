@@ -165,8 +165,87 @@ const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
 const triangleInputField2 = document.getElementById('rom-value2');
 const triangleInputFieldValue2 = triangleInputField2.innerText;
 const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
+
 // WORKING WITH RHOMBOS::
+
 document.getElementById('rombhos-calculate').addEventListener('click',function(){
 // PASSING THE VALUES TO THE FUNCTION;
 const findAreaofRhombos = findingArea(triangleInputFieldFloat1,triangleInputFieldFloat2);
 })
+
+// WORKING WITH PENTAGON
+
+
+// FINDING THE RHOMBOS AREA::
+
+function findingArea(romValue1,romValue2){
+ 
+
+    // Validation;
+    if (isNaN(triangleInputFieldFloat1)) {
+       alert('Please Enter valid Input...!');
+       const olList = document.getElementById('ol-list');
+       olList.style.display = 'none';
+   }
+   else if (isNaN(triangleInputFieldFloat2)) {
+       alert('Please Enter valid Input...!');
+       const olList = document.getElementById('ol-list');
+       olList.style.display = 'none';
+   }
+   
+   else {
+   
+       // CALCULATION PART::
+   
+       const triangleAreaResult = 0.5 * romValue1 * romValue2;
+   
+       const tribase = document.getElementById('penta-base');
+       tribase.innerText = PentagonInputFieldFloat1;
+   
+       const triheight = document.getElementById('penta-height');
+       triheight.innerText = PentagonInputFieldFloat2;
+   
+       //   Fetch Name From UI;
+       const triHeading = document.getElementById('penta-heading');
+       const triHeadingText = triHeading.innerText;
+       //   RESULT SHOWING PART;
+       const name = document.getElementById('name');
+       const result = document.getElementById('result');
+   
+       name.innerText = triHeadingText;
+       result.innerText = triangleAreaResult.toFixed(2);
+   
+       // SHOWING THE RESULT IN A BLOCK::
+       const olList = document.getElementById('ol-list');
+       olList.style.display = 'block';
+   
+       // Convert to Meter square::
+       document.getElementById('convert').addEventListener('click', function () {
+           const meterSquareResult = triangleAreaResult / 10000;
+           result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
+           const cm = document.getElementById('c');
+           cm.style.display='none';
+       })
+   
+       // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
+       document.getElementById('cross-btn').addEventListener('click', function () {
+           olList.style.display = 'none';
+       })
+   
+   } 
+   }
+
+// First Pentagon InputBox
+const PentagonInputField1 = document.getElementById('penta-value1');
+const PentagonInputFieldValue1 = PentagonInputField1.innerText;
+const PentagonInputFieldFloat1 = parseFloat(PentagonInputFieldValue1);
+
+// SECOND Pentagon INPUT FIELD::
+const PentagonInputField2 = document.getElementById('penta-value2');
+const PentagonInputFieldValue2 = PentagonInputField2.innerText;
+const PentagonInputFieldFloat2 = parseFloat(PentagonInputFieldValue2);
+
+document.getElementById('calculate-pentagon').addEventListener('click',function(){
+    // PASSING THE VALUES TO THE FUNCTION;
+    const findAreaofPentagon = findingArea(PentagonInputFieldFloat1,PentagonInputFieldFloat2);
+    })
