@@ -172,3 +172,76 @@ document.getElementById('calculate-pentagon').addEventListener('click',function(
     // PASSING THE VALUES TO THE FUNCTION;
     const findAreaofPentagon = findingArea(PentagonInputFieldFloat1,PentagonInputFieldFloat2);
     })
+
+
+
+    // Working with RHOMBOS::
+
+
+
+document.getElementById('rombhos-calculate').addEventListener('click',function(){
+
+    // First Rhombos InputBox
+const romInputField1 = document.getElementById('rom-value1');
+const romInputFieldValue1 = romInputField1.innerText;
+const romInputFieldFloat1 = parseFloat(romInputFieldValue1);
+
+// SECOND Rhombos INPUT FIELD::
+const romInputField2 = document.getElementById('rom-value2');
+const romInputFieldValue2 = romInputField2.innerText;
+const romInputFieldFloat2 = parseFloat(romInputFieldValue2);
+
+ // Validation;
+ if (isNaN(PentagonInputFieldFloat1)) {
+    alert('Please Enter valid Input...!');
+    const olList = document.getElementById('ol-list');
+    olList.style.display = 'none';
+}
+else if (isNaN(PentagonInputFieldFloat2)) {
+    alert('Please Enter valid Input...!');
+    const olList = document.getElementById('ol-list');
+    olList.style.display = 'none';
+}
+
+else {
+
+    // CALCULATION PART::
+
+    const triangleAreaResult = 0.5 * romInputFieldFloat1 * romInputFieldValue2;
+
+    const tribase = document.getElementById('rom-base');
+    tribase.innerText = romInputFieldFloat1;
+
+    const triheight = document.getElementById('rom-height');
+    triheight.innerText = romInputFieldFloat2;
+
+    //   Fetch Name From UI;
+    const triHeading = document.getElementById('rom-heading');
+    const PentaHeadingText = triHeading.innerText;
+    //   RESULT SHOWING PART;
+    const name = document.getElementById('name');
+    const result = document.getElementById('result');
+
+    name.innerText = PentaHeadingText;
+    result.innerText = triangleAreaResult.toFixed(2);
+
+    // SHOWING THE RESULT IN A BLOCK::
+    const olList = document.getElementById('ol-list');
+    olList.style.display = 'block';
+
+    // Convert to Meter square::
+    document.getElementById('convert').addEventListener('click', function () {
+        const meterSquareResult = triangleAreaResult / 10000;
+        result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
+        const cm = document.getElementById('c');
+        cm.style.display='none';
+    })
+
+    // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
+    document.getElementById('cross-btn').addEventListener('click', function () {
+        olList.style.display = 'none';
+    })
+
+} 
+
+    })
