@@ -1,5 +1,6 @@
 // PART 01 START:::::::::::
 // FUNCTIONS FOR RECTANGULAR & PARALLEOGRAM AREA CALCULATIONS::
+
 function findAreaOfRectPara(input1,input2,base,height,heading){
     const triangleInputFieldFloat1 = parseFloat(input1);
     const triangleInputFieldFloat2 = parseFloat(input2);
@@ -111,6 +112,9 @@ document.getElementById('para-calculate').addEventListener('click', function () 
 
 // PART 01 END:::::::::::
 
+
+
+
 function findAreaOfThree(value1, value2) {
     // First InputBox
     const triangleInputField1 = document.getElementById('tri-input1');
@@ -190,7 +194,7 @@ function findAreaOfThree(value1, value2) {
 
 }
 
-// RECTANGLE INPUT BOX WORKING PROCEDURE::
+// TRIANGALE INPUT BOX WORKING PROCEDURE::
 document.getElementById('triangle-calculate').addEventListener('click', function () {
 
     // First InputBox
