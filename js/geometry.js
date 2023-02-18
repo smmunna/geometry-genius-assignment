@@ -115,16 +115,62 @@ document.getElementById('para-calculate').addEventListener('click', function () 
 
 
 
-function findAreaOfThree(value1, value2) {
+// MADE FUNCTION FOR TRIANGLE, RHOMBOS, PENTAGOAN::
+function AreaOfTriRhoPen(inputs1,inputs2,base1,height1,heading1){
+    const triangleInputFieldFloat1 = parseFloat(inputs1);
+    const triangleInputFieldFloat2 = parseFloat(inputs2);
+
+    // CALCULATION PART::
+
+    const triangleAreaResult = 0.5 * triangleInputFieldFloat1 * triangleInputFieldFloat2;
+
+   
+
+    const tribase = document.getElementById(base1); //CHANGE
+    tribase.innerText = triangleInputFieldFloat1;
+
+    const triheight = document.getElementById(height1); //CHANGE
+    triheight.innerText = triangleInputFieldFloat2;
+
+    //   Fetch Name From UI;
+    const triHeading = document.getElementById(heading1); //CHANGE
+    const triHeadingText = triHeading.innerText;
+    //   RESULT SHOWING PART;
+    const name = document.getElementById('name');
+    const result = document.getElementById('result');
+
+    name.innerText = triHeadingText;
+    result.innerText = triangleAreaResult.toFixed(2);
+
+    // SHOWING THE RESULT IN A BLOCK::
+    const olList = document.getElementById('ol-list');
+    olList.style.display = 'block';
+
+    // Convert to Meter square::
+    document.getElementById('convert').addEventListener('click', function () {
+        const meterSquareResult = triangleAreaResult / 10000;
+        result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
+        const cm = document.getElementById('c');
+        cm.style.display = 'none';
+    })
+
+    // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
+    document.getElementById('cross-btn').addEventListener('click', function () {
+        olList.style.display = 'none';
+    })
+
+}
+
+// TRIANGALE INPUT BOX WORKING PROCEDURE::
+document.getElementById('triangle-calculate').addEventListener('click', function () {
+
     // First InputBox
     const triangleInputField1 = document.getElementById('tri-input1');
     const triangleInputFieldValue1 = triangleInputField1.value;
-
     // SECOND INPUT FIELD::
     const triangleInputField2 = document.getElementById('tri-input2');
     const triangleInputFieldValue2 = triangleInputField2.value;
-
-
+    
 
     // Validation;
     if (isNaN(triangleInputFieldValue1)) {
@@ -149,66 +195,11 @@ function findAreaOfThree(value1, value2) {
     }
     else {
 
-        // CALCULATION PART::
-
-        const triangleAreaResult = 0.5 * value1 * value2;
-
+        const areaOfTriangle = AreaOfTriRhoPen(triangleInputFieldValue1,triangleInputFieldValue2,'tri-base','tri-height','tri-heading');
 
         triangleInputField1.value = '';
         triangleInputField2.value = '';
-
-        const tribase = document.getElementById('tri-base');
-        tribase.innerText = triangleInputFieldValue1;
-
-        const triheight = document.getElementById('tri-height');
-        triheight.innerText = triangleInputFieldValue2;
-
-        //   Fetch Name From UI;
-        const triHeading = document.getElementById('tri-heading');
-        const triHeadingText = triHeading.innerText;
-        //   RESULT SHOWING PART;
-        const name = document.getElementById('name');
-        const result = document.getElementById('result');
-
-        name.innerText = triHeadingText;
-        result.innerText = triangleAreaResult.toFixed(2);
-
-        // SHOWING THE RESULT IN A BLOCK::
-        const olList = document.getElementById('ol-list');
-        olList.style.display = 'block';
-
-        // Convert to Meter square::
-        document.getElementById('convert').addEventListener('click', function () {
-            const meterSquareResult = triangleAreaResult / 10000;
-            result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
-            const cm = document.getElementById('c');
-            cm.style.display = 'none';
-        })
-
-        // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
-        document.getElementById('cross-btn').addEventListener('click', function () {
-            olList.style.display = 'none';
-        })
-
     } //END OF ELSE CONDITION
-
-}
-
-// TRIANGALE INPUT BOX WORKING PROCEDURE::
-document.getElementById('triangle-calculate').addEventListener('click', function () {
-
-    // First InputBox
-    const triangleInputField1 = document.getElementById('tri-input1');
-    const triangleInputFieldValue1 = triangleInputField1.value;
-    const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
-
-    // SECOND INPUT FIELD::
-    const triangleInputField2 = document.getElementById('tri-input2');
-    const triangleInputFieldValue2 = triangleInputField2.value;
-    const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
-
-    const findAreaofTRriangle = findAreaOfThree(triangleInputFieldFloat1, triangleInputFieldFloat2);
-
 })
 
 // WORKING WITH PENTAGON
