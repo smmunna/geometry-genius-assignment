@@ -1,13 +1,13 @@
-// RECTANGLE INPUT BOX WORKING PROCEDURE::
-document.getElementById('triangle-calculate').addEventListener('click', function () {
-    const triangleInputField1 = document.getElementById('tri-input1');
-    const triangleInputFieldValue1 = triangleInputField1.value;
-    const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
+function findAreaOfThree(value1,value2){
+// First InputBox
+const triangleInputField1 = document.getElementById('tri-input1');
+const triangleInputFieldValue1 = triangleInputField1.value;
 
-    // SECOND INPUT FIELD::
-    const triangleInputField2 = document.getElementById('tri-input2');
-    const triangleInputFieldValue2 = triangleInputField2.value;
-    const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
+// SECOND INPUT FIELD::
+const triangleInputField2 = document.getElementById('tri-input2');
+const triangleInputFieldValue2 = triangleInputField2.value;
+
+
 
     // Validation;
     if (isNaN(triangleInputFieldValue1)) {
@@ -34,7 +34,7 @@ document.getElementById('triangle-calculate').addEventListener('click', function
 
         // CALCULATION PART::
 
-        const triangleAreaResult = 0.5 * triangleInputFieldFloat1 * triangleInputFieldFloat2;
+        const triangleAreaResult = 0.5 * value1 * value2;
 
 
         triangleInputField1.value = '';
@@ -74,4 +74,23 @@ document.getElementById('triangle-calculate').addEventListener('click', function
         })
 
     } //END OF ELSE CONDITION
+
+}
+
+
+// RECTANGLE INPUT BOX WORKING PROCEDURE::
+document.getElementById('triangle-calculate').addEventListener('click', function () {
+    
+     // First InputBox
+const triangleInputField1 = document.getElementById('tri-input1');
+const triangleInputFieldValue1 = triangleInputField1.value;
+const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
+
+// SECOND INPUT FIELD::
+const triangleInputField2 = document.getElementById('tri-input2');
+const triangleInputFieldValue2 = triangleInputField2.value;
+const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
+
+const findAreaofTRriangle = findAreaOfThree(triangleInputFieldFloat1,triangleInputFieldFloat2);
+
 })
