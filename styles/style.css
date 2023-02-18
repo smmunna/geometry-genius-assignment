@@ -86,10 +86,13 @@ body {
 
 
 /* COMPLETED  */
-.list-items{
+.mylist-items{
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+}
+ol{
+    display: none;
 }
