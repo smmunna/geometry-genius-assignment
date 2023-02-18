@@ -83,4 +83,14 @@ body {
     gap: 10px;
 }
 
+
+
 /* COMPLETED  */
+.list-items{
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
