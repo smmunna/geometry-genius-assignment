@@ -65,7 +65,7 @@ document.getElementById('rectangle-calculate').addEventListener('click', functio
             const meterSquareResult = triangleAreaResult / 10000;
             result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
             const cm = document.getElementById('c');
-            cm.style.display='none';
+            cm.style.display = 'none';
         })
 
         // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
@@ -130,7 +130,7 @@ document.getElementById('para-calculate').addEventListener('click', function () 
             const meterSquareResult = triangleAreaResult / 10000;
             result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
             const cm = document.getElementById('c');
-            cm.style.display='none';
+            cm.style.display = 'none';
         })
 
         // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
@@ -220,7 +220,6 @@ function findAreaOfThree(value1, value2) {
 
 }
 
-
 // RECTANGLE INPUT BOX WORKING PROCEDURE::
 document.getElementById('triangle-calculate').addEventListener('click', function () {
 
@@ -237,9 +236,6 @@ document.getElementById('triangle-calculate').addEventListener('click', function
     const findAreaofTRriangle = findAreaOfThree(triangleInputFieldFloat1, triangleInputFieldFloat2);
 
 })
-
-
-
 
 // WORKING WITH PENTAGON
 // FINDING THE pentagon AREA::
@@ -300,7 +296,6 @@ function findingArea(pentaValue1, pentaValue2) {
 
     }
 }
-
 // First Pentagon InputBox
 const PentagonInputField1 = document.getElementById('penta-value1');
 const PentagonInputFieldValue1 = PentagonInputField1.innerText;
@@ -319,9 +314,6 @@ document.getElementById('calculate-pentagon').addEventListener('click', function
 
 
 // Working with RHOMBOS::
-
-
-
 document.getElementById('rombhos-calculate').addEventListener('click', function () {
 
     // First Rhombos InputBox
@@ -391,7 +383,6 @@ document.getElementById('rombhos-calculate').addEventListener('click', function 
 
 
 // WORKING WITH ELLIPSE::
-
 document.getElementById('ell-calculate').addEventListener('click', function () {
 
     // First Rhombos InputBox
