@@ -205,12 +205,12 @@ document.getElementById('calculate-pentagon').addEventListener('click', function
 // First Pentagon InputBox
 const triangleInputField1 = document.getElementById('penta-value1');
 const triangleInputFieldValue1 = triangleInputField1.innerText;
-const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
+
 
 // SECOND Pentagon INPUT FIELD::
 const triangleInputField2 = document.getElementById('penta-value2');
 const triangleInputFieldValue2 = triangleInputField2.innerText;
-const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
+
   
 // Validation;
     if (isNaN(triangleInputFieldValue1)) {
@@ -226,43 +226,8 @@ const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
 
     else {
 
-        // CALCULATION PART::
-
-        const triangleAreaResult = 0.5 * triangleInputFieldFloat1 * triangleInputFieldFloat2;
-
-        const tribase = document.getElementById('penta-base'); //CHANGE
-        tribase.innerText = triangleInputFieldFloat1;
-
-        const triheight = document.getElementById('penta-height'); //CHANGE
-        triheight.innerText = triangleInputFieldFloat2;
-
-        //   Fetch Name From UI;
-        const triHeading = document.getElementById('penta-heading'); //CHANGE
-        const triHeadingText = triHeading.innerText;
-        //   RESULT SHOWING PART;
-        const name = document.getElementById('name');
-        const result = document.getElementById('result');
-
-        name.innerText = triHeadingText;
-        result.innerText = triangleAreaResult.toFixed(2);
-
-        // SHOWING THE RESULT IN A BLOCK::
-        const olList = document.getElementById('ol-list');
-        olList.style.display = 'block';
-
-        // Convert to Meter square::
-        document.getElementById('convert').addEventListener('click', function () {
-            const meterSquareResult = triangleAreaResult / 10000;
-            result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
-            const cm = document.getElementById('c');
-            cm.style.display = 'none';
-        })
-
-        // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
-        document.getElementById('cross-btn').addEventListener('click', function () {
-            olList.style.display = 'none';
-        })
-
+        // CALCULATION PART FOR PENTAGON::
+        const pentagonArea = AreaOfTriRhoPen(triangleInputFieldValue1,triangleInputFieldValue2,'penta-base','penta-height','penta-heading');
     }
 })
 
