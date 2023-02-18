@@ -64,6 +64,8 @@ document.getElementById('triangle-calculate').addEventListener('click', function
         document.getElementById('convert').addEventListener('click', function () {
             const meterSquareResult = triangleAreaResult / 10000;
             result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
+            const cm = document.getElementById('c');
+            cm.style.display='none';
         })
 
         // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
