@@ -1,13 +1,53 @@
-// FINDING THE AREA OF RECTANGLE::
-document.getElementById('rectangle-calculate').addEventListener('click', function () {
-    const triangleInputField1 = document.getElementById('rec-input1');
-    const triangleInputFieldValue1 = triangleInputField1.value;
-    const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
+// PART 01 START:::::::::::
+// FUNCTIONS FOR RECTANGULAR & PARALLEOGRAM AREA CALCULATIONS::
+function findAreaOfRectPara(input1,input2,base,height,heading){
+    const triangleInputFieldFloat1 = parseFloat(input1);
+    const triangleInputFieldFloat2 = parseFloat(input2);
 
+        // CALCULATION PART::
+        const triangleAreaResult = triangleInputFieldFloat1 * triangleInputFieldFloat2;
+        const tribase = document.getElementById(base); //change
+        tribase.innerText = triangleInputFieldFloat1;
+        const triheight = document.getElementById(height); //change
+        triheight.innerText = triangleInputFieldFloat2;
+        //   Fetch Name From UI;
+        const triHeading = document.getElementById(heading); //change
+        const triHeadingText = triHeading.innerText;
+        //   RESULT SHOWING PART;
+        const name = document.getElementById('name');
+        const result = document.getElementById('result');
+
+        name.innerText = triHeadingText;
+        result.innerText = triangleAreaResult.toFixed(2);
+
+        // SHOWING THE RESULT IN A BLOCK::
+        const olList = document.getElementById('ol-list');
+        olList.style.display = 'block';
+
+        // Convert to Meter square::
+        document.getElementById('convert').addEventListener('click', function () {
+            const meterSquareResult = triangleAreaResult / 10000;
+            result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
+            const cm = document.getElementById('c');
+            cm.style.display = 'none';
+        })
+
+        // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
+        document.getElementById('cross-btn').addEventListener('click', function () {
+            olList.style.display = 'none';
+        })
+
+    
+}
+
+// FOR RECTANGLE::
+document.getElementById('rectangle-calculate').addEventListener('click', function () {
+    // FIRST FIELD::
+    const triangleInputField1 = document.getElementById('rec-input1'); //CHANGE
+    const triangleInputFieldValue1 = triangleInputField1.value;
     // SECOND INPUT FIELD::
-    const triangleInputField2 = document.getElementById('rec-input2');
+    const triangleInputField2 = document.getElementById('rec-input2'); //CHANGE
     const triangleInputFieldValue2 = triangleInputField2.value;
-    const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
 
     // Validation;
     if (isNaN(triangleInputFieldValue1)) {
@@ -31,115 +71,45 @@ document.getElementById('rectangle-calculate').addEventListener('click', functio
         olList.style.display = 'none';
     }
     else {
+        
+    // CALL THE FUNCTION::
+    const recArea = findAreaOfRectPara(triangleInputFieldValue1,triangleInputFieldValue2,'rec-base','rec-height','rectangle-heading');
+    
+    triangleInputField1.value = '';
+    triangleInputField2.value = '';
+    }
 
-        // CALCULATION PART::
 
-        const triangleAreaResult = triangleInputFieldFloat1 * triangleInputFieldFloat2;
-
-
-        triangleInputField1.value = '';
-        triangleInputField2.value = '';
-
-        const tribase = document.getElementById('rec-base');
-        tribase.innerText = triangleInputFieldValue1;
-
-        const triheight = document.getElementById('rec-height');
-        triheight.innerText = triangleInputFieldValue2;
-
-        //   Fetch Name From UI;
-        const triHeading = document.getElementById('rectangle-heading');
-        const triHeadingText = triHeading.innerText;
-        //   RESULT SHOWING PART;
-        const name = document.getElementById('name');
-        const result = document.getElementById('result');
-
-        name.innerText = triHeadingText;
-        result.innerText = triangleAreaResult.toFixed(2);
-
-        // SHOWING THE RESULT IN A BLOCK::
-        const olList = document.getElementById('ol-list');
-        olList.style.display = 'block';
-
-        // Convert to Meter square::
-        document.getElementById('convert').addEventListener('click', function () {
-            const meterSquareResult = triangleAreaResult / 10000;
-            result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
-            const cm = document.getElementById('c');
-            cm.style.display = 'none';
-        })
-
-        // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
-        document.getElementById('cross-btn').addEventListener('click', function () {
-            olList.style.display = 'none';
-        })
-
-    } //END OF ELSE CONDITION
 })
-// FINDING THE AREA OF Parrelleogram::
+// FOR Parrelleogram::
 document.getElementById('para-calculate').addEventListener('click', function () {
     const triangleInputField1 = document.getElementById('para-value1');
     const triangleInputFieldValue1 = triangleInputField1.innerText;
-    const triangleInputFieldFloat1 = parseFloat(triangleInputFieldValue1);
+    
 
     // SECOND INPUT FIELD::
     const triangleInputField2 = document.getElementById('para-value2');
     const triangleInputFieldValue2 = triangleInputField2.innerText;
-    const triangleInputFieldFloat2 = parseFloat(triangleInputFieldValue2);
+    
 
     // Validation;
-    if (isNaN(triangleInputFieldFloat1)) {
+    if (isNaN(triangleInputFieldValue1)) {
         alert('Please Enter valid Input...!');
         const olList = document.getElementById('ol-list');
         olList.style.display = 'none';
     }
-    else if (isNaN(triangleInputFieldFloat2)) {
+    else if (isNaN(triangleInputFieldValue2)) {
         alert('Please Enter valid Input...!');
         const olList = document.getElementById('ol-list');
         olList.style.display = 'none';
     }
     else {
-
         // CALCULATION PART::
-
-        const triangleAreaResult = triangleInputFieldFloat1 * triangleInputFieldFloat2;
-
-
-
-        const tribase = document.getElementById('para-base');
-        tribase.innerText = triangleInputFieldFloat1;
-
-        const triheight = document.getElementById('para-height');
-        triheight.innerText = triangleInputFieldFloat2;
-
-        //   Fetch Name From UI;
-        const triHeading = document.getElementById('para-heading');
-        const triHeadingText = triHeading.innerText;
-        //   RESULT SHOWING PART;
-        const name = document.getElementById('name');
-        const result = document.getElementById('result');
-
-        name.innerText = triHeadingText;
-        result.innerText = triangleAreaResult.toFixed(2);
-
-        // SHOWING THE RESULT IN A BLOCK::
-        const olList = document.getElementById('ol-list');
-        olList.style.display = 'block';
-
-        // Convert to Meter square::
-        document.getElementById('convert').addEventListener('click', function () {
-            const meterSquareResult = triangleAreaResult / 10000;
-            result.innerText = meterSquareResult.toFixed(3); //I took toFixed(3) because sometimes value comes 0.00 if i take toFixed(2);
-            const cm = document.getElementById('c');
-            cm.style.display = 'none';
-        })
-
-        // FOR CROSS BUTTON DELETE THE FULL ELEMENT OF RESULT::
-        document.getElementById('cross-btn').addEventListener('click', function () {
-            olList.style.display = 'none';
-        })
-
+        const recArea = findAreaOfRectPara(triangleInputFieldValue1,triangleInputFieldValue2,'para-base','para-height','para-heading');
     } //END OF ELSE CONDITION
 })
+
+// PART 01 END:::::::::::
 
 function findAreaOfThree(value1, value2) {
     // First InputBox
